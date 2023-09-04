@@ -1,4 +1,4 @@
-[org 0x7c00]
+[org 0x7c00] 		; As far as I know the BIOs starts to read from this offset.
 
 mov ah, 0x0e
 mov bx, buf_os_message
@@ -64,5 +64,5 @@ buf_question: db 0xa,0xa, 0xd, "Now, type your username here [max size: 11 char]
 buf_user_answer: times 11 db 0
 buf_finish_question: db 0xa, 0xa, 0xd, "FINISHED", 0
 
-times 510-($-$$) db 0
-db 0x055, 0x0aa
+times 510-($-$$) db 0  ; MBR bootloader is 512 bytes, so we need calc it 
+db 0x055, 0x0aa  ; MBR must ends with this two bytes.
