@@ -20,4 +20,4 @@ Bye !
 
 [Daedalus Community](https://youtube.com/playlist?list=PLm3B56ql_akNcvH8vvJRYOc7TbYhRs19M&si=1o62umV5LCkNhu_d)
 
-[BIOS - Interrupt Table] (https://en.wikipedia.org/wiki/BIOS_interrupt_call)
+[BIOS - Interrupt Table](https://en.wikipedia.org/wiki/BIOS_interrupt_call)
