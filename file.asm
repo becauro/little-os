@@ -1,19 +1,22 @@
-;bits 64 
+[org 0x7c00]
 
-global assembly
+mov ah, 0x0e
+mov bx, buffer
 
-assembly:
-	mov eax, 555 
-       	jmp .end 
+loop:
 
-        mov eax, 333 
+	mov al , [bx] 
+	cmp al, 0 
+	je end 
+	int 0x10
+	inc bx 
+	jmp loop 
 
-.end:
-	add eax, 2
-	ret
+end:
+	jmp $
 
 
-
+buffer: db 0xa, "Starting the Operating System...", 0
 
 times 510-($-$$) db 0
 db 0x055, 0x0aa
